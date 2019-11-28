@@ -8,6 +8,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 // pages
 import Home from './components/pages/Home';
 import Feedback from './components/pages/Feedback';
+import Products from './components/pages/Products';
+
 
 const App = () => {
 	return (
@@ -25,6 +27,10 @@ const App = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home/>
+						</Route>
+						
+						<Route exact path="/products">
+							<Products/>
 						</Route>
 						
 						<Route exact path="/feedback">
