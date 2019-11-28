@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logoImg from "../../images/logo.svg";
 import avatarImg from "../../images/avatar.jpg";
 import {useHistory} from 'react-router-dom';
+import coin from "../../images/coin.png";
 
 const Navigation = () => {
 	const history = useHistory();
@@ -15,7 +16,8 @@ const Navigation = () => {
 			<Logo onClick={handleClick}/>
 			<User>
 				<Avatar/>
-				<Label>1280</Label>
+				<Label>570</Label>
+				<Coin/>
 			</User>
 		</Container>
 	);
@@ -52,7 +54,6 @@ const User = styled.div`
 `;
 
 const Label = styled.div`
-	${({theme}) => theme.text.sm};
 	padding: 0 10px;
 `;
 
@@ -62,4 +63,11 @@ const Avatar = styled.div`
 	border-radius: 5px;
 	background: url(${avatarImg}) no-repeat center center;
 	background-size: cover;
+`;
+
+const Coin = styled.span`
+	background: url(${coin}) no-repeat center;
+	height: 25px;
+	width: 25px;
+	background-size: contain;
 `;

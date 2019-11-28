@@ -16,15 +16,15 @@ const Home = () => {
 		<Content>
 			<Hero/>
 			<Text>
-				Give your
+				Give your old
 				<LoopWrapper>
 					<TextLoop>
 						<span>newborn clothes</span>
 						<span>kid's toys</span>
-						<span>baby stroller</span>
+						<span>baby strollers</span>
 					</TextLoop>
 				</LoopWrapper>
-				and XXXXZ XXXXX
+				to get new amazing items
 			</Text>
 			<Card>
 				<StyledTextInput large label="What"/>
@@ -68,7 +68,7 @@ const Card = styled.div`
 `;
 
 const StyledTextInput = styled(TextInput)`
-margin: 0 10px;
+	margin: 0 10px;
 `;
 
 const StyledButton = styled(Button)`

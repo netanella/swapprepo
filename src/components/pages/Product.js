@@ -1,49 +1,60 @@
 import React, {useCallback} from 'react';
 import styled from 'styled-components';
-import {Card, Progress, Button} from '@datorama/app-components';
+import {Card, Progress, Button, Tag} from '@datorama/app-components';
 import {useHistory} from 'react-router-dom';
+import coin from "../../images/coin.png";
 
 const Product = () => {
-	const history = useHistory();
-	const navigateToFeedback = useCallback(() => {
-		history.push('/feedback')
-	}, []);
-	
-	return (
-		<Container>
-			<StyledCard>
-				<Row>
-					<Image/>
-					<Description>
-						<Row>
-							<Title>Baby clothes - 6 months</Title>
-							<StyledButton onClick={navigateToFeedback}>Get It</StyledButton>
-						</Row>
-						<Seller>John do</Seller>
-						
-						<Category>Clothes</Category>
-						<Condition>Used</Condition>
-						<Comments>
-							My baby work it for a askdjas dklajshd klasjdkl asjdlkaj skldajsldk ajsl k
-							ajklshdajksdhjkashdkjasdhkjasdhkajshdakjsdhkajsdhakjsdhaksj
-						</Comments>
-					</Description>
-				</Row>
-				
-				<Divider/>
-				
-				<Column>
-					<Title>Giver Profile</Title>
-					<Seller>John do</Seller>
-					
-					<StyledProgress label="Condition" percentage={20}/>
-					<StyledProgress label="Responsiveness" percentage={20}/>
-					<StyledProgress label="Trust worthy" percentage={20}/>
-				</Column>
-			</StyledCard>
-		
-		</Container>
-	);
+    const history = useHistory();
+    const navigateToFeedback = useCallback(() => {
+        history.push('/feedback')
+    }, []);
+
+    return (
+        <Container>
+            <StyledCard>
+                <Row>
+                    <Image/>
+                    <Description>
+                        <Row>
+                            <Title>Baby clothes - 6 months</Title>
+                            <StyledButton onClick={navigateToFeedback}>Request Now</StyledButton>
+                        </Row>
+
+                        <Category>Categories:
+                            <StyledTag label="Cloths"/>
+                            <StyledTag label="Infant"/>
+                            <StyledTag label="Used"/>
+                        </Category>
+                        <Price> Price: 6 <Coin/>
+                        </Price>
+                        <ItemDetails>
+                            My baby is all grown up now and these cloths no longer fit. They are in excellent condition
+                            and would be happy to have a new loving home!
+                        </ItemDetails>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.7309685994387!2d34.78288668608647!3d32.076524526680224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzM1LjUiTiAzNMKwNDYnNTAuNSJF!5e0!3m2!1siw!2sus!4v1574955224944!5m2!1siw!2sus"
+                            width="600" height="230" frameBorder="0" allowFullScreen=""></iframe>
+                    </Description>
+                </Row>
+
+                <Divider/>
+
+                <Column>
+                    <Title>Giver Profile</Title>
+
+                    <Seller>
+                        <Avatar/>
+                        <SellerLabel>John Doe</SellerLabel>
+                    </Seller>
+
+                    <StyledProgress label="Condition" percentage={20}/>
+                    <StyledProgress label="Responsiveness" percentage={20}/>
+                    <StyledProgress label="Trust worthy" percentage={20}/>
+                </Column>
+            </StyledCard>
+
+        </Container>
+    );
 };
 
 export default Product;
@@ -68,7 +79,7 @@ const Row = styled.div`
 
 const Image = styled.div`
 	flex: 1;
-	height: 400px;
+	height: 500px;
 	background: url("https://media.karousell.com/media/photos/products/2016/06/22/used_baby_clothes_1466573888_e4786b82.jpg") no-repeat center;
 	border-radius: 5px;
 `;
@@ -81,27 +92,50 @@ const Description = styled.div`
 
 const Title = styled.div`
 	${({theme}) => theme.text.smBold};
-	font-size: 20px;
+	font-size: 30px;
 	margin-bottom: 20px;
 `;
 
 const Seller = styled.div`
 	${({theme}) => theme.text.smBold};
 	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	border-radius: 4px;
 `;
+
+const Avatar = styled.div`
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: url("https://i.ytimg.com/vi/7Xu_s1YJhyg/maxresdefault.jpg") no-repeat center center;
+	background-size: cover;
+`;
+
+const SellerLabel = styled.div`
+	${({theme}) => theme.text.sm};
+	padding: 0 10px;
+	font-size: 20px;
+`;
+
 
 const Category = styled.div`
-	${({theme}) => theme.text.smBold};
 	margin-bottom: 10px;
+	display: flex;
+    flex-direction: row;
 `;
 
-const Condition = styled.div`
-	${({theme}) => theme.text.smBold};
+const Price = styled.div`
 	margin-bottom: 10px;
+	display: flex;
+    flex-direction: row;
 `;
 
-const Comments = styled.div`
-	${({theme}) => theme.text.smBold};
+const ItemDetails = styled.div`
+    margin: 20px 0;
 `;
 
 const Divider = styled.div`
@@ -118,8 +152,7 @@ const Column = styled.div`
 `;
 
 const StyledProgress = styled(Progress)`
-	margin: 10px 0;
-	
+	margin: 10px 0;	
 	.label {
 		width: 100px;
 	}
@@ -127,4 +160,16 @@ const StyledProgress = styled(Progress)`
 
 const StyledButton = styled(Button)`
 	margin-left: auto;
+`;
+
+const StyledTag = styled(Tag)`
+	margin: 0 4px;
+`;
+
+const Coin = styled.span`
+	background: url(${coin}) no-repeat center;
+	height: 25px;
+	width: 25px;
+	background-size: contain;
+	margin: 0 3px;
 `;
