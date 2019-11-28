@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="379px" height="77px" viewBox="0 0 379 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-460.000000, -269.000000)">
+            <g id="Group-3" transform="translate(459.000000, 262.000000)">
+                <g id="Group" transform="translate(38.500000, 46.000000) rotate(-5.000000) translate(-38.500000, -46.000000) translate(4.000000, 5.000000)">
+                    <rect id="Rectangle" fill="#CECAFF" x="0" y="7" width="69" height="69"></rect>
+                    <text id="S" font-family="OpenSans-SemiBold, Open Sans" font-size="60" font-weight="500" fill="#000000">
+                        <tspan x="18.0058594" y="64">S</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(115.500000, 45.000000) rotate(1.000000) translate(-115.500000, -45.000000) translate(81.000000, 4.000000)">
+                    <rect id="Rectangle" fill="#FFE2B2" x="0" y="7" width="69" height="69"></rect>
+                    <text id="W" font-family="OpenSans-SemiBold, Open Sans" font-size="60" font-weight="500" fill="#000000">
+                        <tspan x="6.12597656" y="64">W</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(248.000000, 5.000000)"></g>
+                <g id="Group-2" transform="translate(191.500000, 44.000000) rotate(-4.000000) translate(-191.500000, -44.000000) translate(157.000000, 3.000000)">
+                    <rect id="Rectangle" fill="#F8C0FF" x="0" y="7" width="69" height="69"></rect>
+                    <text id="A" font-family="OpenSans-SemiBold, Open Sans" font-size="60" font-weight="500" fill="#000000">
+                        <tspan x="14.6660156" y="64">A</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(343.500000, 46.000000) rotate(-2.000000) translate(-343.500000, -46.000000) translate(309.000000, 5.000000)">
+                    <rect id="Rectangle" fill="#D8C2FF" x="0" y="7" width="69" height="69"></rect>
+                    <text id="P" font-family="OpenSans-SemiBold, Open Sans" font-size="60" font-weight="500" fill="#000000">
+                        <tspan x="16.0429688" y="64">P</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(267.500000, 46.000000) rotate(4.000000) translate(-267.500000, -46.000000) translate(233.000000, 5.000000)">
+                    <rect id="Rectangle" fill="#C6FFD4" x="0" y="7" width="69" height="69"></rect>
+                    <text id="P" font-family="OpenSans-SemiBold, Open Sans" font-size="60" font-weight="500" fill="#000000">
+                        <tspan x="16.0429688" y="64">P</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
