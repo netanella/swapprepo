@@ -16,7 +16,7 @@ const Navigation = () => {
 			<Logo onClick={handleClick}/>
 			<User>
 				<Avatar/>
-				<Label>570</Label>
+				<Label>46</Label>
 				<Coin/>
 			</User>
 		</Container>

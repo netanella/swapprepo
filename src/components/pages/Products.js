@@ -1,11 +1,11 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {Card, Select, TextInput, Button} from '@datorama/app-components';
 import {withRouter} from 'react-router-dom';
 
 import PRODUCTS from '../../mocks/products';
 
-class Products extends React.PureComponent {
+class Products extends React.Component {
 
 	constructor(props){
 		super(props);

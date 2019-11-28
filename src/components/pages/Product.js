@@ -3,61 +3,83 @@ import styled from 'styled-components';
 import {Card, Progress, Button, Tag} from '@datorama/app-components';
 import {useHistory} from 'react-router-dom';
 import coin from "../../images/coin.png";
+import PRODUCTS from "../../mocks/products";
+import {withRouter} from 'react-router';
 
-const Product = () => {
-    const history = useHistory();
-    const navigateToFeedback = useCallback(() => {
-        history.push('/feedback')
-    }, []);
 
-    return (
-        <Container>
-            <StyledCard>
-                <Row>
-                    <Image/>
-                    <Description>
-                        <Row>
-                            <Title>Baby clothes - 6 months</Title>
-                            <StyledButton onClick={navigateToFeedback}>Request Now</StyledButton>
-                        </Row>
+class Product extends React.Component {
 
-                        <Category>Categories:
-                            <StyledTag label="Cloths"/>
-                            <StyledTag label="Infant"/>
-                            <StyledTag label="Used"/>
-                        </Category>
-                        <Price> Price: 6 <Coin/>
-                        </Price>
-                        <ItemDetails>
-                            My baby is all grown up now and these cloths no longer fit. They are in excellent condition
-                            and would be happy to have a new loving home!
-                        </ItemDetails>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.7309685994387!2d34.78288668608647!3d32.076524526680224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzM1LjUiTiAzNMKwNDYnNTAuNSJF!5e0!3m2!1siw!2sus!4v1574955224944!5m2!1siw!2sus"
-                            width="600" height="230" frameBorder="0" allowFullScreen=""></iframe>
-                    </Description>
-                </Row>
+    constructor(props){
+        super(props);
 
-                <Divider/>
+        this.state = {
+            request: false
+        };
 
-                <Column>
-                    <Title>Giver Profile</Title>
+        this.handleClick = this.handleClick.bind();
+    }
 
-                    <Seller>
-                        <Avatar/>
-                        <SellerLabel>John Doe</SellerLabel>
-                    </Seller>
+    navigateToFeedback = () => {
+        this.props.history.push('/feedback');
+    };
 
-                    <StyledProgress label="Condition" percentage={20}/>
-                    <StyledProgress label="Responsiveness" percentage={20}/>
-                    <StyledProgress label="Trust worthy" percentage={20}/>
-                </Column>
-            </StyledCard>
+    handleClick = () => {
+        this.setState({request: !this.state.request});
+    };
 
-        </Container>
-    );
+    render() {
+
+        const requested = this.state.request? 'Pending...' : 'Request Now';
+
+        return (
+            <Container>
+                <StyledCard>
+                    <Row>
+                        <Image/>
+                        <Description>
+                            <Row>
+                                <Title>Baby clothes - 6 months</Title>
+                                <StyledButton onClick={this.handleClick}>{requested}</StyledButton>
+                            </Row>
+
+                            <Category>Categories:
+                                <StyledTag label="Cloths"/>
+                                <StyledTag label="Infant"/>
+                                <StyledTag label="Used"/>
+                            </Category>
+                            <Price> Price: 6 <Coin/>
+                            </Price>
+                            <ItemDetails>
+                                My baby is all grown up now and these cloths no longer fit. They are in excellent condition
+                                and would be happy to have a new loving home!
+                            </ItemDetails>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.7309685994387!2d34.78288668608647!3d32.076524526680224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzM1LjUiTiAzNMKwNDYnNTAuNSJF!5e0!3m2!1siw!2sus!4v1574955224944!5m2!1siw!2sus"
+                                    width="600" height="230" frameBorder="0" allowFullScreen=""/>
+                        </Description>
+                    </Row>
+
+                    <Divider/>
+
+                    <Column>
+                        <Title>Giver Profile</Title>
+
+                        <Seller>
+                            <Avatar onClick={this.navigateToFeedback}/>
+                            <SellerLabel onClick={this.navigateToFeedback}>John Doe</SellerLabel>
+                        </Seller>
+
+                        <StyledProgress label="Condition" percentage={20}/>
+                        <StyledProgress label="Responsiveness" percentage={20}/>
+                        <StyledProgress label="Trust worthy" percentage={20}/>
+                    </Column>
+                </StyledCard>
+
+            </Container>
+        );
+    }
 };
 
-export default Product;
+export default withRouter(Product);
 
 const Container = styled.div`
 	width: 100vw;
@@ -113,12 +135,14 @@ const Avatar = styled.div`
 	border-radius: 50%;
 	background: url("https://i.ytimg.com/vi/7Xu_s1YJhyg/maxresdefault.jpg") no-repeat center center;
 	background-size: cover;
+	cursor: pointer;
 `;
 
 const SellerLabel = styled.div`
 	${({theme}) => theme.text.sm};
 	padding: 0 10px;
 	font-size: 20px;
+	cursor: pointer;
 `;
 
 
