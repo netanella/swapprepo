@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // pages
 import Home from './components/pages/Home';
+import Products from './components/pages/Products';
 
 const App = () => {
 	return (
@@ -17,15 +18,14 @@ const App = () => {
 						<Avatar/>
 					</User>
 				</Navigation>
-				
+
 				<Router>
 					<Switch>
-						<Route exact path="/">
-							<Home/>
-						</Route>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/products" component={Products} />
 					</Switch>
 				</Router>
-			
+
 			</Container>
 		</AppTheme>
 	);
