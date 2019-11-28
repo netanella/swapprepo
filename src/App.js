@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // pages
 import Home from './components/pages/Home';
+import Feedback from './components/pages/Feedback';
 
 const App = () => {
 	return (
@@ -24,6 +25,10 @@ const App = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home/>
+						</Route>
+						
+						<Route exact path="/feedback">
+							<Feedback/>
 						</Route>
 					</Switch>
 				</Router>
