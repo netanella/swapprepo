@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {ThemeProvider} from 'styled-components';
 import {AppTheme, lightTheme} from '@datorama/app-components';
 import logoImg from './images/logo.svg';
+import avatarImg from './images/avatar.jpg';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // pages
@@ -16,6 +17,7 @@ const App = () => {
 					<Logo/>
 					<User>
 						<Avatar/>
+						<Label>1280</Label>
 					</User>
 				</Navigation>
 
@@ -60,11 +62,22 @@ const Logo = styled.div`
 `;
 
 const User = styled.div`
+	display: flex;
+	align-items: center;
+	background: ${({ theme }) => theme.a100};
+	box-sizing: border-box;
+	border-radius: 4px;
+`;
+
+const Label = styled.div`
+	${({ theme }) => theme.text.sm};
+	padding: 0 10px;
 `;
 
 const Avatar = styled.div`
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	background: #444;
+	width: 36px;
+	height: 36px;
+	border-radius: 5px;
+	background: url(${avatarImg}) no-repeat center center;
+	background-size: cover;
 `;
